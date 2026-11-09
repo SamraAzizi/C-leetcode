@@ -8,3 +8,12 @@ public:
                 rows[i] += grid[i][j];
                 cols[j] += grid[i][j];
             }
+
+        int ans = 0;
+        for (int i = 0; i < m; ++i)
+            for (int j = 0; j < n; ++j)
+                if (grid[i][j] && rows[i] + cols[j] > 2)  // it's counted in both, so more than 2 means company
+                    ++ans;
+        return ans;
+    }
+};
